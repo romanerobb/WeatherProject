@@ -9,11 +9,14 @@ app.get("/", function(req, res){
     
     https.get(url, function(response){
         console.log(response.statusCode);
+
+        response.on("data", function(data){
+            const weatherData = JSON.parse(data)
+            const temp = weatherData.main.temp
+            const weatherDescription = weatherData.weather[0].description
+            res.send("The temperature in London is " + temp + "degrees Celcius.");
+        })
     })
 
-    res.send("Server is up and running.")
-})
-
-app.listen(3000, function() {
-    console.log("This Server is running on port 3000.");
+    // res.send("The Server is up and running.")
 })
