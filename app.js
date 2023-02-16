@@ -17,7 +17,7 @@ app.get("/", function(req, res){
             const weatherData = JSON.parse(data)
             const temp = weatherData.main.temp
             const weatherDescription = weatherData.weather[0].description
-            const icon = weather[0].icon
+            const icon = weatherData.weather[0].icon
             const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
             res.write("<p>The weather is currently " + weatherDescription + "<p>");
             res.write("<h1>The temperature in London is " + temp + "degrees Celcius.<h1>");
@@ -25,4 +25,8 @@ app.get("/", function(req, res){
             res.send();
         })
     })
+})
+
+app.listen(3000, function() {
+    console.log("Server is running on port 3000.");
 })
