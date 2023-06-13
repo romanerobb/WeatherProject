@@ -10,6 +10,8 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
 
+//Code by Romane Robb
+
 app.post("/", function(req, res){
 const query = req.body.cityName;
 const apiKey = "25a9793482b86fde4b8f4e9549483d09";

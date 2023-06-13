@@ -1,7 +1,7 @@
 # WeatherProject
 A project I've created using HMTL, CSS, Javascript, Express, and more
 
-# Task-List
+# TasksList
 - Build a server using Express.
 - Utilize the Openweather API.
 - Parse The JSON data.
